@@ -104,19 +104,14 @@ class Yampee_Routing_Route
 	}
 
 	/**
-	 * @return string
+	 * @param string $action
+	 * @return Yampee_Routing_Route
 	 */
-	public function getName()
+	public function setAction($action)
 	{
-		return $this->name;
-	}
+		$this->action = $action;
 
-	/**
-	 * @return string
-	 */
-	public function getPattern()
-	{
-		return $this->pattern;
+		return $this;
 	}
 
 	/**
@@ -128,12 +123,100 @@ class Yampee_Routing_Route
 	}
 
 	/**
+	 * @param array $attributes
+	 * @return Yampee_Routing_Route
+	 */
+	public function setAttributes($attributes)
+	{
+		$this->attributes = $attributes;
+
+		return $this;
+	}
+
+	/**
 	 * @return array
 	 */
 	public function getAttributes()
 	{
 		return $this->attributes;
 	}
+
+	/**
+	 * @param string $name
+	 * @return Yampee_Routing_Route
+	 */
+	public function setName($name)
+	{
+		$this->name = $name;
+
+		return $this;
+	}
+
+	/**
+	 * @return string
+	 */
+	public function getName()
+	{
+		return $this->name;
+	}
+
+	/**
+	 * @param string $pattern
+	 * @return Yampee_Routing_Route
+	 */
+	public function setPattern($pattern)
+	{
+		$this->pattern = $pattern;
+
+		return $this;
+	}
+
+	/**
+	 * @return string
+	 */
+	public function getPattern()
+	{
+		return $this->pattern;
+	}
+
+	/**
+	 * @param array $requirements
+	 * @return Yampee_Routing_Route
+	 */
+	public function setRequirements($requirements)
+	{
+		$this->requirements = $requirements;
+
+		return $this;
+	}
+
+	/**
+	 * @return array
+	 */
+	public function getRequirements()
+	{
+		return $this->requirements;
+	}
+
+	/**
+	 * @param string $url
+	 * @return Yampee_Routing_Route
+	 */
+	public function setUrl($url)
+	{
+		$this->url = $url;
+
+		return $this;
+	}
+
+	/**
+	 * @return string
+	 */
+	public function getUrl()
+	{
+		return $this->url;
+	}
+
 
 	/**
 	 * Callback to replace requirements pattern in the route pattern.

@@ -44,28 +44,6 @@ class Yampee_Routing_Bridge_Annotation_Route extends Yampee_Annotations_Definiti
 	}
 
 	/**
-	 * Execute an action when the annotation is matched.
-	 *
-	 * @param Reflector $reflector
-	 * @param array     $arguments
-	 * @return mixed
-	 */
-	public function execute(Reflector $reflector, array $arguments)
-	{
-		$route = new Yampee_Routing_Route(
-			$this->name,
-			$this->pattern,
-			$reflector->getClassName().'::'.$reflector->getName(),
-			$this->defaults,
-			$this->requirements
-		);
-
-		$this->router->addRoute($route);
-
-		return $this->router;
-	}
-
-	/**
 	 * Return the annotation name: here, we will use the annotation as @Route()
 	 *
 	 * @return string
@@ -86,7 +64,7 @@ class Yampee_Routing_Bridge_Annotation_Route extends Yampee_Annotations_Definiti
 	 */
 	public function getTargets()
 	{
-		return array(self::TARGET_METHOD);
+		return array(self::TARGET_METHOD, self::TARGET_CLASS);
 	}
 
 	/**
